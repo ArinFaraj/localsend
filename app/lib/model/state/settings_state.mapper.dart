@@ -99,6 +99,11 @@ class SettingsStateMapper extends ClassMapperBase<SettingsState> {
     'autoFinish',
     _$autoFinish,
   );
+  static bool _$copyToClipboard(SettingsState v) => v.copyToClipboard;
+  static const Field<SettingsState, bool> _f$copyToClipboard = Field(
+    'copyToClipboard',
+    _$copyToClipboard,
+  );
   static bool _$minimizeToTray(SettingsState v) => v.minimizeToTray;
   static const Field<SettingsState, bool> _f$minimizeToTray = Field(
     'minimizeToTray',
@@ -166,6 +171,7 @@ class SettingsStateMapper extends ClassMapperBase<SettingsState> {
     #quickSaveFromFavorites: _f$quickSaveFromFavorites,
     #receivePin: _f$receivePin,
     #autoFinish: _f$autoFinish,
+    #copyToClipboard: _f$copyToClipboard,
     #minimizeToTray: _f$minimizeToTray,
     #https: _f$https,
     #sendMode: _f$sendMode,
@@ -196,6 +202,7 @@ class SettingsStateMapper extends ClassMapperBase<SettingsState> {
       quickSaveFromFavorites: data.dec(_f$quickSaveFromFavorites),
       receivePin: data.dec(_f$receivePin),
       autoFinish: data.dec(_f$autoFinish),
+      copyToClipboard: data.dec(_f$copyToClipboard),
       minimizeToTray: data.dec(_f$minimizeToTray),
       https: data.dec(_f$https),
       sendMode: data.dec(_f$sendMode),
@@ -292,6 +299,7 @@ abstract class SettingsStateCopyWith<$R, $In extends SettingsState, $Out>
     bool? quickSaveFromFavorites,
     String? receivePin,
     bool? autoFinish,
+    bool? copyToClipboard,
     bool? minimizeToTray,
     bool? https,
     SendMode? sendMode,
@@ -350,6 +358,7 @@ class _SettingsStateCopyWithImpl<$R, $Out>
     bool? quickSaveFromFavorites,
     Object? receivePin = $none,
     bool? autoFinish,
+    bool? copyToClipboard,
     bool? minimizeToTray,
     bool? https,
     SendMode? sendMode,
@@ -379,6 +388,7 @@ class _SettingsStateCopyWithImpl<$R, $Out>
         #quickSaveFromFavorites: quickSaveFromFavorites,
       if (receivePin != $none) #receivePin: receivePin,
       if (autoFinish != null) #autoFinish: autoFinish,
+      if (copyToClipboard != null) #copyToClipboard: copyToClipboard,
       if (minimizeToTray != null) #minimizeToTray: minimizeToTray,
       if (https != null) #https: https,
       if (sendMode != null) #sendMode: sendMode,
@@ -414,6 +424,7 @@ class _SettingsStateCopyWithImpl<$R, $Out>
     ),
     receivePin: data.get(#receivePin, or: $value.receivePin),
     autoFinish: data.get(#autoFinish, or: $value.autoFinish),
+    copyToClipboard: data.get(#copyToClipboard, or: $value.copyToClipboard),
     minimizeToTray: data.get(#minimizeToTray, or: $value.minimizeToTray),
     https: data.get(#https, or: $value.https),
     sendMode: data.get(#sendMode, or: $value.sendMode),
